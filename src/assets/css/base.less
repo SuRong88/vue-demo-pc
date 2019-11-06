@@ -516,6 +516,11 @@ input:disabled {
 /*****************************
 稀见样式
 *****************************/
+/*火狐浏览器的placeholder默认opacity0.4*/
+input:-moz-placeholder,
+input::-moz-placeholder {
+    opacity: 1;
+}
 .placeholer-class {
 	&::-webkit-input-placeholder {
 		color: #adadad;
