@@ -1,5 +1,4 @@
 # demo-pc
-
 ## Project setup
 ```
 npm install

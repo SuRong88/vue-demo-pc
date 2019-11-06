@@ -28,3 +28,5 @@ window.vm = new Vue({
 	store,
 	render: h => h(App)
 }).$mount("#app");
+import Toast from './Toast'
+Vue.use(Toast);

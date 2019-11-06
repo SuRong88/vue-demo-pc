@@ -148,43 +148,45 @@
 	height: calc(@height);
 }
 /*****************************
-本项目通用
+页面主要样式
 *****************************/
-#app .pagination{
-	margin: 100px auto 220px;
-	.el-pager{
-		li {
-			min-width: 30px;
-			height: 28px;
-			padding: 0 4px;
-		    margin: 0 5px;
-			font-size: 13px;
-		    color: #606266;
-			line-height: 28px;
-			text-align: center;
-		    background-color: #f4f4f5;
-			.bs_bb();
-			.border_rds(2px);
-			&.btn-quickprev,
-			&.btn-quicknext {
-			    line-height: 28px;
-			    color: #303133;
-			}
-			&:not(.disabled).active {
-			    background-color: cyan;
-			    color: red;
-			}
-		}
-	}
-	.btn-next .el-icon, 
-	.btn-prev .el-icon {
-	    display: block;
-	    font-size: 12px;
-	    font-weight: 700;
-	}
+html,
+body {
+	background-color: #fff;
+	width: 100%;
 }
 
+body {
+	// min-width: 1200px;
+	font-size: 16px;
+	color: #000000;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-family: 'PingFang SC', Microsoft YaHei, arial, tahoma, '\5fae\8f6f\96c5\9ed1', 'Hiragino Sans GB', sans-serif !important;
+}
 
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/* 遮罩层 */
+.mask {
+	z-index: 99;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.content{
+		background-color: #fff;
+		.border_rds(3px);
+	}
+}
 /*****************************
 各个组件样式
 *****************************/

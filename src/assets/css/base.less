@@ -551,44 +551,196 @@ input:disabled {
 		width: 0 !important;
 	}
 }
-
 /*****************************
-页面主要样式
+本项目通用 elemenui样式覆盖
 *****************************/
-html,
-body {
-	background-color: #fff;
-	width: 100%;
+#app .pagination{
+	margin: 10px auto;
+	// 分页按钮大小颜色
+	.el-pager{
+		li {
+			min-width: 30px;
+			height: 28px;
+			padding: 0 4px;
+		    margin: 0 5px;
+			font-size: 13px;
+		    color: #606266;
+			line-height: 28px;
+			text-align: center;
+		    background-color: #f4f4f5;
+			.bs_bb();
+			.border_rds(2px);
+			// ...按钮
+			&.btn-quickprev,
+			&.btn-quicknext {
+			    line-height: 28px;
+			    color: #303133;
+			}
+			// 当前页按钮样式
+			&:not(.disabled).active {
+			    background-color: cyan;
+			    color: red;
+			}
+		}
+	}
+	// 上下页按钮
+	.btn-next .el-icon, 
+	.btn-prev .el-icon {
+	    display: block;
+	    font-size: 12px;
+	    font-weight: 700;
+	}
+	// 跳转器
+	.el-pagination__jump {
+	    margin-left: 19px;
+	    font-weight: 400;
+	    color: #606266;
+	}
+	// 跳转器的前往第几页的文字大小
+	.el-pagination button, .el-pagination span:not([class*=suffix]) {
+	    display: inline-block;
+	    font-size: 17px;
+	    min-width: 35.5px;
+	    height: 28px;
+	    line-height: 28px;
+	    vertical-align: top;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	// 跳转器输入框
+	.el-pagination__editor.el-input {
+	    width: 52px;
+	}
+	.el-input {
+	    position: relative;
+	    font-size: 14px;
+	    display: inline-block;
+	    width: 100%;
+	}
+	.el-pagination__editor {
+	    line-height: 18px;
+	    padding: 0 2px;
+	    height: 28px;
+	    text-align: center;
+	    margin: 0 2px;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	    border-radius: 3px;
+	}
+	.el-pagination__editor.el-input .el-input__inner {
+	    height: 28px;
+	}
+	.el-pagination__jump .el-input__inner {
+	    padding: 0 0px;
+	}
+	.el-pagination .el-input__inner {
+	    text-align: center;
+	    -moz-appearance: textfield;
+	    line-height: normal;
+	}
+	.el-input__inner {
+	    -webkit-appearance: none;
+	    background-color: #FFF;
+	    background-image: none;
+	    border-radius: 4px;
+	    border: 1px solid #DCDFE6;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	    color: #606266;
+	    display: inline-block;
+	    font-size: inherit;
+	    height: 40px;
+	    line-height: 40px;
+	    outline: 0;
+	    padding: 0 15px;
+	    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+	    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+	    width: 100%;
+	}
+	// 跳转器输入框 结束
+	
 }
-
-body {
-	min-width: 1200px;
-	font-size: 16px;
-	color: #000000;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-	font-family: 'PingFang SC', Microsoft YaHei, arial, tahoma, '\5fae\8f6f\96c5\9ed1', 'Hiragino Sans GB', sans-serif !important;
-}
-
-.wrapper {
-	width: 1200px;
-	margin: 0 auto;
-}
-
-/* 遮罩层 */
-.mask {
-	z-index: 99;
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.6);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	.content{
-		background-color: #fff;
-		.border_rds(3px);
+// 下拉菜单？？按钮
+#app .el-input__inner {
+	&::-webkit-input-placeholder {
+		color: #adadad;
+	} 
+	&:-moz-placeholder {
+		color: #adadad;
+	} 
+	&::-moz-placeholder {
+		color: #adadad;
+	} 
+	&:-ms-input-placeholder {
+		color: #adadad;
+	} 
+	// 下拉按钮图标
+	.el-select .el-input .el-select__caret{
+		color: red;
+		font-size: 20px;
+	}
+	.el-input__icon{
+		
 	}
 }
+// 复选框
+#app .el-checkbox-group{
+	// 每个复选框项
+	.el-checkbox {
+	    // margin-right: ;
+	    // margin-bottom: ;
+	}
+	// 选中小正方框
+	// 1.非选中状态
+	.el-checkbox__inner{
+		// border: 0.0625rem solid #DCDFE6;
+		// width: ;
+		// height: ;
+	}
+	// 2.选中状态
+	.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+	    // background-color: #409EFF;
+	    // border-color: #409EFF;
+	}
+	// 每个复选框项文字
+	// 1.非选中状态
+	.el-checkbox__label{
+		// font-size: ;
+		// color: ;
+	}
+	// 2.选中状态
+	.el-checkbox__input.is-checked+.el-checkbox__label {
+	    // color: #409EFF;
+	}
+}
+// 单选
+#app {
+	.el-radio-button {
+			margin-right: 10px;
+		.el-radio-button__inner {
+			.border_rds(5px);
+			border-left: 1px solid #000;
+			&:hover{
+				color: blue;
+			}
+		}
+		
+	} 
+	.el-radio-button.is-active .el-radio-button__inner {
+				// background-color: #289dfd ;
+				background-color: pink;
+				color: #fff ;
+			}
+			.el-radio-button__orig-radio:disabled + .el-radio-button__inner {
+				color: #adadad;
+				background-color: #fff;
+			}
+			.el-input.is-disabled .el-input__inner {
+				color: #adadad;
+				-webkit-text-fill-color: #adadad;
+		 }
+}
+
+
+
+

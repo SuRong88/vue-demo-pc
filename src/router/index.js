@@ -11,6 +11,13 @@ const routes = [
 		},
 		component: resolve => require(['pages/test.vue'], resolve)
 	},{
+		name: 'demo',
+		path: '/demo',
+		meta: {
+			title: 'demo'
+		},
+		component: resolve => require(['pages/demo.vue'], resolve)
+	},{
 		path: "/",
 		redirect: '/index'
 	},
@@ -41,6 +48,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+	mode:'history',
 	routes
 });
 router.beforeEach((to, from, next) => {
