@@ -1,31 +1,35 @@
 <template>
 	<div class="footer">
-		footer
+		footer{{msg}}
 	</div>
 </template>
 
 <script>
-import urls from '../../api/index.js';
-export default {
-	name: 'vFooter',
-	components: {},
-	created() {
-	
-	},
-	mounted() {
-	
-	},
-	data() {
-		return {
-	
-		};
-	},
-	computed: {},
-	watch: {},
-	methods: {
-	
-	},
-};
+	import urls from '../../api/index.js';
+	import Bus from '@/bus/event.js'
+	export default {
+		name: 'vFooter',
+		components: {},
+		created() {
+			Bus.$on('send', val => { //接收参数
+				console.log(val)
+				this.msg = val
+			})
+		},
+		mounted() {
+
+		},
+		data() {
+			return {
+				msg:''
+			};
+		},
+		computed: {},
+		watch: {},
+		methods: {
+
+		},
+	};
 </script>
 
 <style></style>

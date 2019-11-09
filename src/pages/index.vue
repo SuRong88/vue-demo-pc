@@ -9,8 +9,8 @@
 		name: 'index',
 		created() {
 			// this.infoToast('消息提示')
-			this.wDialog('标题','内容')
-			// this.$errorToast('错误提示',8000)
+			// this.wDialog('标题','内容')
+			// this.$errorToast('错误提示',2000)
 			// setTimeout(()=>{
 			// 	this.$successToast('成功提示',5000)
 			// },5000)
