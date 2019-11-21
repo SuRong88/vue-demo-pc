@@ -3,7 +3,7 @@
 		<h1>常用elemenui组件</h1>
 		<h2>分页器</h2>
 		<el-pagination @current-change="handleCurrentChange" class="pagination" background layout="prev, pager, next,jumper"
-		 :page-size="limit" :current-page="current_page" :total="total_num"></el-pagination>
+		 :page-size="limit" :current-page="current_page" :total="total_page"></el-pagination>
 		<h2>下拉框</h2>
 		<el-select popper-class='select' no-data-text='empty' filterable clearable v-model="select" placeholder="文字" @change=''>
 			<el-option v-for="(item, index) in arr" :key="item" :label="item" :value="item"></el-option>
@@ -57,7 +57,7 @@
 				// 分页器
 				current_page: 1,
 				limit: 12,
-				total_num: 99,
+				total_page: 99,
 				total_page: 1,
 				// 下拉菜单
 				select: '',
