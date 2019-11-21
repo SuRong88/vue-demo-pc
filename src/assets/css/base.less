@@ -559,21 +559,24 @@ input::-moz-placeholder {
 本项目通用 elemenui样式覆盖
 *****************************/
 #app .pagination{
-	margin: 10px auto;
+	//分页器居中 给el-pagination添加父盒子<div class="flex flex-center"></div>
 	// 分页按钮大小颜色
 	.el-pager{
 		li {
 			min-width: 30px;
 			height: 28px;
 			padding: 0 4px;
-		    margin: 0 5px;
+		    	margin: 0 5px;
 			font-size: 13px;
-		    color: #606266;
+		    	color: #606266;
 			line-height: 28px;
 			text-align: center;
-		    background-color: #f4f4f5;
+		   	background-color: #f4f4f5;
 			.bs_bb();
 			.border_rds(2px);
+			&:hover {
+				color: #ff6600;
+			}
 			// ...按钮
 			&.btn-quickprev,
 			&.btn-quicknext {
@@ -588,6 +591,18 @@ input::-moz-placeholder {
 		}
 	}
 	// 上下页按钮
+	.btn-next,
+	.btn-prev {
+		min-width: 40px;
+		height: 40px;
+		padding: 0 16px;
+		background-color: #fff;
+		border: 1px solid #f1f1f1;
+		&:hover {
+			color: #ff6600;
+		}
+	}
+	// 上下页按钮图标
 	.btn-next .el-icon, 
 	.btn-prev .el-icon {
 	    display: block;
