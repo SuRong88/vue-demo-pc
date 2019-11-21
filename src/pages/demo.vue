@@ -2,7 +2,7 @@
 	<div class="demo">
 		<h1>常用elemenui组件</h1>
 		<h2>分页器</h2>
-		<el-pagination @current-change="handleCurrentChange" class="pagination" background layout="prev, pager, next,jumper"
+		<el-pagination prev-text="上一页" next-text="下一页" @current-change="handleCurrentChange" class="pagination" background layout="prev, pager, next,jumper"
 		 :page-size="limit" :current-page="current_page" :total="total_page"></el-pagination>
 		<h2>下拉框</h2>
 		<el-select popper-class='select' no-data-text='empty' filterable clearable v-model="select" placeholder="文字" @change=''>
