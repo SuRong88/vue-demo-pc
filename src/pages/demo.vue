@@ -78,7 +78,7 @@
 			'$route.query': function(newVal, oldVal) {
 				console.log('oldVal' + oldVal.page)
 				console.log('newVal' + newVal.page)
-			}，
+			},
 			$route(to, from) {
 				console.log(to.path, from.path);
 				// to , from 分别表示从哪跳转到哪，都是一个对象
