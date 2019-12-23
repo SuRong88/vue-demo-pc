@@ -1,7 +1,13 @@
-// 当前接口是否本地
-var ISLOCAL = 1;
-var BASEURL = ISLOCAL ? '/api' : 'http://target.com/api/api';
-export default {
-	// 注释
-	API01: BASEURL + '',
-}
+import Vue from 'vue';
+// 是否本地模式
+let ISLOCAL = 1;
+let BASEURL = ISLOCAL ? '/api' : window.config;
+const OPTIONS = {
+    // 登录
+    login: BASEURL + '/user_account/login',
+    // 公司列表
+    companyList: BASEURL + '/company/lists',
+    // 国家地区
+    area: BASEURL + '/area/lists',
+};
+Vue.prototype.$API = OPTIONS;
