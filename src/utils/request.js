@@ -8,7 +8,6 @@ Vue.prototype.$post = post;
 Vue.prototype.$get = get;
 Vue.prototype.$del = del;
 Vue.prototype.$put = put;
-
 Vue.prototype.axiosAll = function(option) {
     return axios.all(option)
 };
@@ -38,10 +37,10 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
     res => {
         window.vm.loadEnd()
-        // if(res.data.code != 0){
-        //   window.vm.errorCode(window.vm, res.data)
-        //   return Promise.reject(res)
-        // }
+        if(res.data.code != 0){
+          window.vm.errorCode(window.vm, res.data)
+          return Promise.reject(res)
+        }
         return res;
     },
     error => {
