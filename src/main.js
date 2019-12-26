@@ -4,7 +4,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-// import api from "api/index";
+import api from "api/index";//没引入也起效 原因未知
 import request from "utils/request";
 import formCheck from 'utils/formCheck';
 import layout from 'utils/layout';
@@ -32,6 +32,4 @@ window.vm = new Vue({
 // 测试 移动端弹窗
 import Toast from './Toast'
 Vue.use(Toast);
-console.log(window.config)
-console.log(JSON.parse(JSON.stringify(Vue.prototype)))
-console.log(Vue.prototype)
+

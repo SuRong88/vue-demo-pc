@@ -172,12 +172,6 @@ export default {
                     .replace("MSIE", "")
                 ) <= 9
             ) {
-                // alert(parseInt(
-                //     navigator.appVersion
-                //     .split(";")[1]
-                //     .replace(/[ ]/g, "")
-                //     .replace("MSIE", "")
-                // ))
                 return true;
             }
             return false;

@@ -1,8 +1,8 @@
 export default {
-    install: function(Vue){
-    	// 状态码管理
+    install: function(Vue) {
+        // 状态码管理
         Vue.prototype.errorCode = function(that, data) {
-            switch(parseInt(data.code)){
+            switch (parseInt(data.code)) {
                 // case 10104:
                 //     that.loadEnd()
                 //     // that.imgCheck()
@@ -14,7 +14,7 @@ export default {
                 //     that.$router.push({path: '/login'})
                 //     // that.$message.error("请先登录")
                 //     break;
-                    
+
                 default:
                     that.loadEnd()
                     // that.$message.error(data.msg)
@@ -25,6 +25,6 @@ export default {
     }
 }
 
-function relogin(that){
+function relogin(that) {
     // window.location.href = 'http://sc07.mrxdtech.com/index.php/home/QrCode?room_id=' + that.getRoom_id()
 }
