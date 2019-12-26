@@ -149,7 +149,8 @@ export default {
                 }
             }, 1000)
         }
-        // 隐藏滚动条Y,操作DOM方式(待优化),需要套三层标签结构
+        // 隐藏滚动条Y,操作DOM方式(待优化),需要套三层标签结构(设置第一次标签的宽高度即可)
+        // vue钩子函数mounted中执行this.hideScrollbarY(el)
         Vue.prototype.hideScrollbarY = function(el) {
             var el = document.querySelector(el)
             var width = el.offsetWidth
