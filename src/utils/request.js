@@ -12,7 +12,7 @@ Vue.prototype.axiosAll = function(option) {
     return axios.all(option);
 };
 
-// 某些需要处理的接口数组
+// 数组存放某些需要处理接口
 let otherUrlArr = ['/api/company/lists'];
 
 //http request 拦截器
