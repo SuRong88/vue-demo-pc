@@ -15,10 +15,10 @@ export default {
         // console.log(this.nullTest(''));
         // console.log(this.IEVersion());
         this.isIE9();
-        // this.$post(this.$API.login, {
-        //     account_name: '412037084@qq.com',
-        //     pwd: this.md5('abc123')
-        // }).then(res => console.log(res));
+        this.$post(this.$API.login, {
+            account_name: '412037084@qq.com',
+            pwd: this.md5('abc123')
+        }).then(res => console.log(res));
         this.$get(this.$API.companyList, {
             company_name: '',
             country_id: '',
@@ -30,9 +30,9 @@ export default {
         }).then(res => {
             console.log(res);
         });
-        // this.$get(this.$API.area, {
-        //     country_id: 0
-        // });
+        this.$get(this.$API.area, {
+            country_id: 0
+        });
     },
     mounted() {
         // console.dir(this.$refs.scrollBox)

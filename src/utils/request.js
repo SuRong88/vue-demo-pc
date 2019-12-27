@@ -12,21 +12,22 @@ Vue.prototype.axiosAll = function(option) {
     return axios.all(option);
 };
 
-// 数组存放某些需要处理接口
-let otherUrlArr = ['/api/company/lists'];
+// 数组存放某些需要处理接口(注意与src/api下的名称对应,记得加/api)
+let otherUrlArr = [`${BASEURL}/company/lists`,`${BASEURL}/user_account/login`];
 
 //http request 拦截器
 axios.interceptors.request.use(
     config => {
+        // console.log(config.url);
         window.vm.loading();
         config.headers = {
             'X-Token': localStorage.getItem('token'),
             'Content-Type': 'application/json;charset=UTF-8',
             'language': 'cn'
         };
-        if (config.url.indexOf(otherUrlArr) >= 0) {
+        if (otherUrlArr.includes(config.url)) {
             // todo
-            console.log('todo');
+            console.log(config.url + '--todo');
         }
         return config;
     },
@@ -38,9 +39,10 @@ axios.interceptors.request.use(
 //http res 拦截器
 axios.interceptors.response.use(
     res => {
+        // console.log(res.config.url);
         window.vm.loadEnd();
         // 某些返回res不是一个正常的对象,正常{code:'',data:'',msg:''}的那种
-        if (res.config.url.indexOf(otherUrlArr) >= 0) {
+        if (otherUrlArr.includes(res.config.url)) {
             return res;
         }
         if (res.data.code != 0) {
