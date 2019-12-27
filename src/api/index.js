@@ -1,6 +1,6 @@
 import Vue from 'vue';
 // 是否本地模式
-const ISLOCAL = 0;
+const ISLOCAL = 1;
 window.BASEURL = ISLOCAL ? '/api' : window.config;
 const OPTIONS = {
     // 登录

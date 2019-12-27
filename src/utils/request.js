@@ -13,7 +13,7 @@ Vue.prototype.axiosAll = function(option) {
 };
 
 // 数组存放某些需要处理接口(注意与src/api下的名称对应,记得加/api)
-let otherUrlArr = [`${BASEURL}/company/lists`,`${BASEURL}/user_account/login`];
+// let otherUrlArr = [`${BASEURL}/company/lists`,`${BASEURL}/user_account/login`];
 
 //http request 拦截器
 axios.interceptors.request.use(
@@ -25,10 +25,10 @@ axios.interceptors.request.use(
             'Content-Type': 'application/json;charset=UTF-8',
             'language': 'cn'
         };
-        if (otherUrlArr.includes(config.url)) {
-            // todo
-            console.log(config.url + '--todo');
-        }
+        // if (otherUrlArr.includes(config.url)) {
+        //     // todo
+        //     console.log(config.url + '--todo');
+        // }
         return config;
     },
     err => {
@@ -42,9 +42,9 @@ axios.interceptors.response.use(
         // console.log(res.config.url);
         window.vm.loadEnd();
         // 某些返回res不是一个正常的对象,正常{code:'',data:'',msg:''}的那种
-        if (otherUrlArr.includes(res.config.url)) {
-            return res;
-        }
+        // if (otherUrlArr.includes(res.config.url)) {
+        //     return res;
+        // }
         if (res.data.code != 0) {
             // window.vm.errorCode(window.vm, res.data);
             return Promise.reject(res);
