@@ -1,38 +1,29 @@
 <template>
-	<div class="index">
-		index
-	</div>
+    <div class="index">
+        index
+        <div class="test-area">
+            <input class="test-input" type="text" placeholder="请输入名字">
+        </div>
+    </div>
 </template>
 
 <script>
-	export default {
-		name: 'index',
-		created() {
-			// this.infoToast('消息提示')
-			// this.wDialog('标题','内容')
-			// this.$errorToast('错误提示',2000)
-			// setTimeout(()=>{
-			// 	this.$successToast('成功提示',5000)
-			// },5000)
-		},
-		mounted() {},
-		data() {
-			return {
-			};
-		},
-		computed: {},
-		watch: {
-		},
-		methods: {
-		}
-	}
+export default {
+    name: 'index',
+    created() {},
+    mounted() {},
+    data() {
+        return {};
+    },
+    computed: {},
+    watch: {},
+    methods: {}
+};
 </script>
 
 <style>
-	.info{
-		background-color: #409EFF;
-	}
-	.icon{
-		color: cyan;
-	}
+.test-input{
+    width: 10rem;
+    height: 5rem;
+}
 </style>

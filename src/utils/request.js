@@ -9,48 +9,52 @@ Vue.prototype.$get = get;
 Vue.prototype.$del = del;
 Vue.prototype.$put = put;
 Vue.prototype.axiosAll = function(option) {
-    return axios.all(option)
+    return axios.all(option);
 };
+
+// 某些需要处理的接口
+let otherUrlArr = ['/api/company/lists'];
+
 //http request 拦截器
 axios.interceptors.request.use(
     config => {
-        // const token = getCookie('名称');注意使用的时候需要引入cookie方法，推荐js-cookie
-        // config.data = JSON.stringify(config.data);
+        window.vm.loading();
         config.headers = {
-            // 'X-Token': localStorage.token,
+            'X-Token': localStorage.getItem('token'),
             'Content-Type': 'application/json;charset=UTF-8',
-            'language':'cn'
+            'language': 'cn'
+        };
+        if (config.url.indexOf(otherUrlArr) >= 0) {
+            // todo
+            console.log('todo');
         }
-        // if(token){
-        //   config.params = {'token':token}
-        // }
-        window.vm.loading()
         return config;
     },
-    error => {
+    err => {
         return Promise.reject(err);
     }
 );
 
-
-//http response 拦截器
+//http res 拦截器
 axios.interceptors.response.use(
     res => {
-        window.vm.loadEnd()
-        if(res.data.code != 0){
-          window.vm.errorCode(window.vm, res.data)
-          return Promise.reject(res)
+        window.vm.loadEnd();
+        // 某些返回res不是一个正常的对象,正常{code:'',data:'',msg:''}的那种
+        if (res.config.url.indexOf(otherUrlArr) >= 0) {
+            return res;
+        }
+        if (res.data.code != 0) {
+            // window.vm.errorCode(window.vm, res.data);
+            return Promise.reject(res);
         }
         return res;
     },
-    error => {
-        window.vm.loadEnd()
+    err => {
+        window.vm.loadEnd();
         // window.vm.errorToast("连接超时")
-        console.log(error)
-        return Promise.reject(error)
+        return Promise.reject(err);
     }
 );
-
 
 /**
  * 封装get方法
@@ -60,18 +64,18 @@ axios.interceptors.response.use(
  */
 function get(url, params = {}) {
     return new Promise((resolve, reject) => {
-        axios.get(url, {
+        axios
+            .get(url, {
                 params: params
             })
-            .then(response => {
-                resolve(response.data);
+            .then(res => {
+                resolve(res.data);
             })
             .catch(err => {
-                reject(err)
-            })
-    })
-};
-
+                reject(err);
+            });
+    });
+}
 
 /**
  * 封装post请求
@@ -82,14 +86,16 @@ function get(url, params = {}) {
 
 function post(url, data = {}) {
     return new Promise((resolve, reject) => {
-        axios.post(url, data)
-            .then(response => {
-                resolve(response.data);
-            }, err => {
-                reject(err)
-            })
-    })
-};
+        axios.post(url, data).then(
+            res => {
+                resolve(res.data);
+            },
+            err => {
+                reject(err);
+            }
+        );
+    });
+}
 
 /**
  * 封装delete请求
@@ -100,14 +106,16 @@ function post(url, data = {}) {
 
 function del(url, data = {}) {
     return new Promise((resolve, reject) => {
-        axios.delete(url, data)
-            .then(response => {
-                resolve(response.data);
-            }, err => {
-                reject(err)
-            })
-    })
-};
+        axios.delete(url, data).then(
+            res => {
+                resolve(res.data);
+            },
+            err => {
+                reject(err);
+            }
+        );
+    });
+}
 
 /**
  * 封装put请求
@@ -118,11 +126,13 @@ function del(url, data = {}) {
 
 function put(url, data = {}) {
     return new Promise((resolve, reject) => {
-        axios.put(url, data)
-            .then(response => {
-                resolve(response.data);
-            }, err => {
-                reject(err)
-            })
-    })
-};
+        axios.put(url, data).then(
+            res => {
+                resolve(res.data);
+            },
+            err => {
+                reject(err);
+            }
+        );
+    });
+}

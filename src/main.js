@@ -32,4 +32,3 @@ window.vm = new Vue({
 // 测试 移动端弹窗
 import Toast from './Toast'
 Vue.use(Toast);
-

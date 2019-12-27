@@ -16,14 +16,13 @@ export default {
                 //     break;
 
                 default:
-                    that.loadEnd()
+                    that.loadEnd();
                     // that.$message.error(data.msg)
                     break;
-
             }
-        }
+        };
     }
-}
+};
 
 function relogin(that) {
     // window.location.href = 'http://sc07.mrxdtech.com/index.php/home/QrCode?room_id=' + that.getRoom_id()

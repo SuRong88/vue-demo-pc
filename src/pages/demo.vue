@@ -88,7 +88,7 @@ export default {
                 confirmText: '确定', // 确定按钮文本
                 cancelText: '取消', // 取消按钮文本
                 isCancel: true, // 是否需要取消按钮
-                isClose: true ,// 是否需要关闭按钮
+                isClose: true // 是否需要关闭按钮
             }
         };
     },

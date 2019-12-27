@@ -1,6 +1,6 @@
 <template>
     <div class="test">
-        <div class="box" id="scrollBox">
+        <div class="box" ref="scrollBox" id="scrollBox">
             <div class="con-w">
                 <ul class="con">
                     <li v-for="i in 100">{{ i }}</li>
@@ -12,12 +12,13 @@
 <script>
 export default {
     created() {
-        console.log(this.IEVersion());
+        // console.log(this.nullTest(''));
+        // console.log(this.IEVersion());
         this.isIE9();
-        this.$post(this.$API.login, {
-            account_name: '412037084@qq.com',
-            pwd: this.md5('abc123')
-        }).then(res => console.log(res));
+        // this.$post(this.$API.login, {
+        //     account_name: '412037084@qq.com',
+        //     pwd: this.md5('abc123')
+        // }).then(res => console.log(res));
         this.$get(this.$API.companyList, {
             company_name: '',
             country_id: '',
@@ -29,12 +30,14 @@ export default {
         }).then(res => {
             console.log(res);
         });
-        this.$get(this.$API.area, {
-            country_id: 0
-        });
+        // this.$get(this.$API.area, {
+        //     country_id: 0
+        // });
     },
     mounted() {
-        this.hideScrollbarY('#scrollBox');
+        // console.dir(this.$refs.scrollBox)
+        // console.log(this.$refs.scrollBox.style)
+        this.hideScrollbarY('scrollBox');
     }
 };
 </script>
