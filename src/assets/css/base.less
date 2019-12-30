@@ -167,15 +167,13 @@ dt,
 dd {
     margin: 0;
     padding: 0;
+    .bs_bb();
 }
 
 li,
 dt,
 dd {
     list-style: none;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 h1,
@@ -185,13 +183,11 @@ h4,
 h5,
 h6 {
     font-size: 100%;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 img {
-    width: 100%;
     border: none;
-    font-size: 0;
     vertical-align: middle;
 }
 
@@ -202,12 +198,10 @@ a {
     outline: none;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+button {
     cursor: pointer;
     outline: none;
+    .bs_bb();
 }
 
 table {
@@ -225,12 +219,9 @@ textarea {
     -webkit-border-radius: 0;
     -o-border-radius: 0;
     border-radius: 0;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     outline: 0;
     font-size: 16px;
     color: #555;
@@ -253,31 +244,36 @@ input[type='checkbox'] {
 }
 
 select {
-    line-height: 1.8;
-    border: none;
-    border: 1px solid #bbb;
+    .bs_bb();
     width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    line-height: 1.8;
     outline: 0;
+    border: 1px solid #bbb;
+    color: #555;
+    font-size: 14px;
+    font-family: Microsoft YaHei, arial, tahoma, '\5fae\8f6f\96c5\9ed1', 'Hiragino Sans GB', sans-serif !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-size: 14px;
-    color: #555;
-    font-family: 'PingFang SC', Microsoft YaHei, arial, tahoma, '\5fae\8f6f\96c5\9ed1', 'Hiragino Sans GB', sans-serif !important;
 }
 
 input:disabled {
-    -webkit-opacity: 1 !important;
     opacity: 1 !important;
+    -webkit-opacity: 1 !important;
     -webkit-text-fill-color: #333;
 }
 
 /*****************************
 辅助类样式
 *****************************/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
 .clearfix {
     zoom: 1;
     &:before {
@@ -309,20 +305,16 @@ input:disabled {
     text-align: center;
 }
 
+.text-j {
+    text-align: justify;
+}
+
 .border {
     border: 1px solid #ddd;
 }
 
 .hide {
-    display: none;
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
+    display: none!important;
 }
 
 .flex {
