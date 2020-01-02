@@ -18,7 +18,7 @@
 <style scoped lang="less">
 	.error {
 		text-align: center;
-		padding-top: 50px;
+		padding-top: 100px;
 		.expression{
 			font-size: 60px;
 		}

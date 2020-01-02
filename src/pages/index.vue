@@ -1,15 +1,9 @@
 <template>
-    <div class="index">
-        index
-        <div class="test-area">
-            <input class="test-input" type="text" placeholder="请输入名字">
-        </div>
-    </div>
+    <div class="index">index</div>
 </template>
 
 <script>
 export default {
-    name: 'index',
     created() {},
     mounted() {},
     data() {
@@ -21,9 +15,4 @@ export default {
 };
 </script>
 
-<style>
-.test-input{
-    width: 10rem;
-    height: 5rem;
-}
-</style>
+<style></style>

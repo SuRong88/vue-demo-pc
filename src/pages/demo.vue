@@ -54,7 +54,6 @@
 
 <script>
 export default {
-    name: 'demo',
     components: {
         vMask(resolve) {
             return require(['@/components/mask/mask.vue'], resolve);
