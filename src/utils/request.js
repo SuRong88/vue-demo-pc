@@ -11,6 +11,9 @@ Vue.prototype.$put = put;
 Vue.prototype.axiosAll = function(option) {
     return axios.all(option);
 };
+Vue.prototype.axiosSpread = function(fn) {
+    return axios.spread(fn);
+};
 
 // 数组存放某些需要处理接口(注意与src/api下的名称对应,记得加/api)
 // let otherUrlArr = [`${BASEURL}/company/lists`,`${BASEURL}/user_account/login`];
@@ -36,7 +39,7 @@ axios.interceptors.request.use(
     }
 );
 
-//http res 拦截器
+//http response 拦截器
 axios.interceptors.response.use(
     res => {
         // console.log(res.config.url);
@@ -53,7 +56,7 @@ axios.interceptors.response.use(
     },
     err => {
         window.vm.loadEnd();
-        // window.vm.errorToast("连接超时")
+        window.vm.errorToast("连接超时")
         return Promise.reject(err);
     }
 );
@@ -64,10 +67,10 @@ axios.interceptors.response.use(
  * @param data
  * @returns {Promise}
  */
+
 function get(url, params = {}) {
     return new Promise((resolve, reject) => {
-        axios
-            .get(url, {
+        axios.get(url, {
                 params: params
             })
             .then(res => {

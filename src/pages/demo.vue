@@ -62,7 +62,11 @@ export default {
     },
     created() {
         let query = JSON.parse(JSON.stringify(this.$route.query));
-        this.current_page = parseInt(query.page);
+        let page = parseInt(query.page);
+        // page = page <= 0 ? 1 : page;
+        // page = page > this.total_page ? this.total_page : page;
+        // console.log(page);
+        this.current_page = page;
     },
     mounted() {},
     data() {
@@ -71,7 +75,6 @@ export default {
             current_page: 1,
             limit: 12,
             total_page: 99,
-            total_page: 1,
             // 下拉菜单
             select: '',
             arr: ['选项1', '选项2', '选项3', '选项4'],
@@ -81,7 +84,7 @@ export default {
             checkbox: [],
             // 图形码模态框
             layerData: {
-                isLayer: true, // 弹窗是否渲染
+                isLayer: false, // 弹窗是否渲染
                 isHeader: true, // 头部是否渲染
                 isBtn: true, // 按钮是否渲染
                 title: '弹窗标题', // 标题内容

@@ -107,9 +107,10 @@ export default {
                 }
             }, 1000);
         };
-        // 不支持动态生成的标签以及懒加载标签(懒加载需要在对应的组件的mounted中执行this.hideScrollbarY(ref))
-        // 隐藏滚动条Y,需要套三层标签结构(设置第一层标签ref以及宽高度即可)
-        // vue钩子函数mounted中执行this.hideScrollbarY(ref)
+        // Y轴隐藏滚动条 注意以下 
+        // 1:不支持动态生成的标签以及懒加载标签(懒加载需要在对应的组件的mounted中执行this.hideScrollbarY(ref))
+        // 2:隐藏滚动条Y,需要套三层标签结构(设置第一层标签ref以及宽高度即可)
+        // 3:vue钩子函数mounted中执行this.hideScrollbarY(ref)
         Vue.prototype.hideScrollbarY = function(ref) {
             var el = this.$refs[ref];
             var width = el.offsetWidth;

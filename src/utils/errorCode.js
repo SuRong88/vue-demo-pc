@@ -17,13 +17,13 @@ export default {
 
                 default:
                     that.loadEnd();
-                    // that.$message.error(data.msg)
+                    that.errorToast(data.msg);
                     break;
             }
         };
     }
 };
 
-function relogin(that) {
-    // window.location.href = 'http://sc07.mrxdtech.com/index.php/home/QrCode?room_id=' + that.getRoom_id()
+function reLogin(that) {
+    window.location.href = 'www.baidu.com';
 }

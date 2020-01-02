@@ -1,7 +1,7 @@
 import Vue from 'vue';
-window.BASEURL = ISLOCAL ? '/api' : window.config;
 // 是否本地模式
 const ISLOCAL = 1;
+window.BASEURL = ISLOCAL ? '/api' : window.config;
 const OPTIONS = {
     // 登录
     login: BASEURL + '/user_account/login',
