@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "pages/Home.vue";
+// test
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 Vue.use(VueRouter);
 const routes = [{
         name: 'test',
@@ -36,13 +38,22 @@ const routes = [{
         name: "home",
         component: resolve => require(['@/pages/Home.vue'], resolve),
         children: [{
-            name: 'index',
-            path: 'index',
-            meta: {
-                title: '首页'
+                name: 'index',
+                path: 'index',
+                meta: {
+                    title: '首页'
+                },
+                component: resolve => require(['pages/Index.vue'], resolve)
             },
-            component: resolve => require(['pages/Index.vue'], resolve)
-        }]
+            {
+                name: 'heyuanda',
+                path: 'heyuanda/:id',
+                meta: {
+                    title: '和元达测试'
+                },
+                component: resolve => require(['pages/heyuanda.vue'], resolve)
+            }
+        ]
     },
 ];
 
@@ -50,11 +61,18 @@ const router = new VueRouter({
     mode: 'history',
     routes
 });
+// 使用分页器切换page会触发beforeEach和afterEach
 router.beforeEach((to, from, next) => {
-    window.document.title = to.meta.title || '默认'
-    next()
+    // test
+    NProgress.start();
+    console.log('触发beforeEach');
+    window.document.title = to.meta.title || '默认';
+    next();
 });
 router.afterEach((to, from) => {
-    window.scrollTo(0, 0)
+    // test
+    // NProgress.done();
+    console.log('触发afterEach');
+    window.scrollTo(0, 0);
 });
 export default router;

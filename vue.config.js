@@ -30,6 +30,7 @@ module.exports = {
 	devServer: {
 		host: '0.0.0.0',
 		port: '8080',
+		open: true,
 		proxy: {
 			'/api': {
 				target: 'http://dz25.mrxdtech.com/api/api', // 接口域名(仅本地模式有效)

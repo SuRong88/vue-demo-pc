@@ -6,17 +6,16 @@ export default {
                 // case 10104:
                 //     that.loadEnd()
                 //     // that.imgCheck()
-                //     that.$message.error("图形验证码错误")
+                //     that.errorToast("图形验证码错误")
                 //     break;
 
                 // case 10302:
                 //     that.loadEnd()
                 //     that.$router.push({path: '/login'})
-                //     // that.$message.error("请先登录")
+                //     // that.errorToast("请先登录")
                 //     break;
 
                 default:
-                    that.loadEnd();
                     that.errorToast(data.msg);
                     break;
             }
