@@ -44,14 +44,6 @@ const routes = [{
                     title: '首页'
                 },
                 component: resolve => require(['pages/Index.vue'], resolve)
-            },
-            {
-                name: 'heyuanda',
-                path: 'heyuanda/:id',
-                meta: {
-                    title: '和元达测试'
-                },
-                component: resolve => require(['pages/heyuanda.vue'], resolve)
             }
         ]
     },
@@ -64,15 +56,15 @@ const router = new VueRouter({
 // 使用分页器切换page会触发beforeEach和afterEach
 router.beforeEach((to, from, next) => {
     // test
-    NProgress.start();
-    console.log('触发beforeEach');
+    // NProgress.start();
+    // console.log('触发beforeEach');
     window.document.title = to.meta.title || '默认';
     next();
 });
 router.afterEach((to, from) => {
     // test
     // NProgress.done();
-    console.log('触发afterEach');
+    // console.log('触发afterEach');
     window.scrollTo(0, 0);
 });
 export default router;

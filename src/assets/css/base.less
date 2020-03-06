@@ -276,7 +276,7 @@ input:disabled {
 
 .clearfix {
     zoom: 1;
-    &:before {
+    &::before {
         content: '';
         clear: both;
         display: block;
@@ -284,7 +284,7 @@ input:disabled {
         visibility: hidden;
     }
 
-    &:after {
+    &::after {
         content: '';
         clear: both;
         display: block;
@@ -527,17 +527,14 @@ input::-moz-placeholder {
         color: #adadad;
     }
 
-    /* 使用webkit内核的浏览器 */
     &:-moz-placeholder {
         color: #adadad;
     }
 
-    /* Firefox版本4-18 */
     &::-moz-placeholder {
         color: #adadad;
     }
 
-    /* Firefox版本19+ */
     &:-ms-input-placeholder {
         color: #adadad;
     }

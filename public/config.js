@@ -1,1 +1,1 @@
-window.config = 'http://dz25.mrxdtech.com/api';
+window.config = 'http://dz25.mrxdtech.com/api/api';

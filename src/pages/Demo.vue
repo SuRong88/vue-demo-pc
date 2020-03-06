@@ -11,7 +11,7 @@
             layout="prev, pager, next,jumper"
             :page-size="limit"
             :current-page="current_page"
-            :total="total_page"
+            :page-count="total_page"
         ></el-pagination>
         <h2>下拉框</h2>
         <el-select popper-class="select" no-data-text="empty" filterable clearable v-model="select" placeholder="文字" @change="">

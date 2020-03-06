@@ -19,6 +19,20 @@ export default {
         };
     },
     created() {
+        // setTimeout(() => {
+           
+        // }, 3000);
+        try {
+            const a = 1;
+            a = 2;
+        } catch (e) {
+            // var err = new Error()
+            // throw err
+            console.log(e);
+            console.log('出错了');
+            //TODO handle the exception
+        }
+        console.log('继续');
         // console.log(this.nullTest(''));
         // console.log(this.IEVersion());
         this.isIE9();
