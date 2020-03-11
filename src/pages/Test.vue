@@ -1,5 +1,5 @@
 <template>
-    <div class="test">
+    <div class="test-page">
         <div class="box" ref="scrollBox" id="scrollBox">
             <div class="con-w">
                 <ul class="con">
@@ -9,6 +9,7 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
     data() {
@@ -80,6 +81,7 @@ export default {
     }
 };
 </script>
+
 <style>
 .box {
     margin: 100px auto;

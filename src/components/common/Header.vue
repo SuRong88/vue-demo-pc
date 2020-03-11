@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-import Bus from '@/bus/event.js';
 export default {
     name: 'vHeader',
     components: {},
@@ -27,9 +26,9 @@ export default {
             this.$emit('fn', this.foo);
         },
         btn(i) {
-            Bus.$emit('send', i); //传递参数
+            this.$Bus.$emit('send', i); //传递参数
             setTimeout(() => {
-                Bus.$emit('send', 10);
+                this.$Bus.$emit('send', 10);
             }, 3000);
         }
     }

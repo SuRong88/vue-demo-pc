@@ -1,9 +1,9 @@
 <template>
-	<div class="error">
+	<div class="error-page">
 		<div class="expression">
 			o(╥﹏╥)o
 		</div>
-		<div class="error_text">
+		<div class="error-text">
 			404
 		</div>
 		<div class="text">
@@ -16,13 +16,13 @@
 </script>
 
 <style scoped lang="less">
-	.error {
+	.error-page {
 		text-align: center;
 		padding-top: 100px;
 		.expression{
 			font-size: 60px;
 		}
-		.error_text{
+		.error-text{
 			font-size: 60px;
 			margin: 50px auto;
 		}

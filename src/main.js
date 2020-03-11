@@ -29,6 +29,9 @@ import "css/layout.less";
 
 // 日期格式化 <td>{{ item.create_time | formatDate('yyyy-MM-dd') }}</td>
 Vue.filter('formatDate', formatDate);
+//vue原型链挂载总线
+Vue.prototype.$Bus = new Vue();
+
 window.vm = new Vue({
     router,
     store,

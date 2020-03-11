@@ -1,5 +1,5 @@
 <template>
-    <div class="demo">
+    <div class="demo-page">
         <h1>常用elemenui组件</h1>
         <h2>分页器</h2>
         <el-pagination

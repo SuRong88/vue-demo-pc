@@ -168,3 +168,16 @@ export default {
         };
     }
 };
+// export default (Vue) => {
+//     // 成功提示
+//     Vue.prototype.successToast = function(msg, duration = 3000) {
+//         if (msg) {
+//             this.$message({
+//                 message: msg,
+//                 type: 'success',
+//                 duration: duration,
+//                 showClose: true
+//             });
+//         }
+//     };
+// }

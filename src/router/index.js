@@ -1,9 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// test
+Vue.use(VueRouter);
+// test (files should be imported in main.js)
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-Vue.use(VueRouter);
+
 const routes = [{
         name: 'test',
         path: '/test',
@@ -38,21 +39,22 @@ const routes = [{
         name: "home",
         component: resolve => require(['@/pages/Home.vue'], resolve),
         children: [{
-                name: 'index',
-                path: 'index',
-                meta: {
-                    title: '首页'
-                },
-                component: resolve => require(['pages/Index.vue'], resolve)
-            }
-        ]
+            name: 'index',
+            path: 'index',
+            meta: {
+                title: '首页'
+            },
+            component: resolve => require(['pages/Index.vue'], resolve)
+        }]
     },
 ];
 
 const router = new VueRouter({
+    // base:'/web/',
     mode: 'history',
     routes
 });
+
 // 使用分页器切换page会触发beforeEach和afterEach
 router.beforeEach((to, from, next) => {
     // test
@@ -61,10 +63,12 @@ router.beforeEach((to, from, next) => {
     window.document.title = to.meta.title || '默认';
     next();
 });
+
 router.afterEach((to, from) => {
     // test
     // NProgress.done();
     // console.log('触发afterEach');
     window.scrollTo(0, 0);
 });
+
 export default router;
