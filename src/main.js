@@ -11,6 +11,7 @@ import formCheck from 'utils/formCheck';
 import layout from 'utils/layout';
 import errorCode from 'utils/errorCode';
 import formatDate from 'utils/formatDate';
+import directive from 'utils/directive';
 
 import ElementUI from 'element-ui';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
@@ -20,6 +21,7 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(formCheck);
 Vue.use(layout);
 Vue.use(errorCode);
+Vue.use(directive);
 
 import 'swiper/dist/css/swiper.css';
 import 'element-ui/lib/theme-chalk/index.css';

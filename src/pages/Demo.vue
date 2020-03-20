@@ -125,12 +125,22 @@ export default {
             console.log('点击取消');
             this.layerData.isLayer = false;
         },
+        // 页面改变
         handleCurrentChange(page) {
             let query = JSON.parse(JSON.stringify(this.$route.query));
             query.page = page;
             this.$router.push({
                 query: query
             });
+        },
+        // 返回顶部（流畅，不兼容IE9）
+        smoothScroll() {
+            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(this.smoothScroll);
+                console.log(Math.ceil(currentScroll / 5));
+                window.scrollTo(0, currentScroll - Math.ceil(currentScroll / 5));
+            }
         }
     }
 };

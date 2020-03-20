@@ -6,6 +6,13 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
 const routes = [{
+        name: 'directive',
+        path: '/directive',
+        meta: {
+            title: 'vue指令'
+        },
+        component: resolve => require(['pages/Directive.vue'], resolve)
+    }, {
         name: 'test',
         path: '/test',
         meta: {
@@ -59,15 +66,18 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     // test
     // NProgress.start();
-    // console.log('触发beforeEach');
-    window.document.title = to.meta.title || '默认';
+    
+    console.log('触发beforeEach');
+    // window.document.title = from.meta.title || '默认';
     next();
 });
 
 router.afterEach((to, from) => {
     // test
     // NProgress.done();
-    // console.log('触发afterEach');
+    
+    window.document.title = to.meta.title || '默认';
+    console.log('触发afterEach');
     window.scrollTo(0, 0);
 });
 

@@ -83,6 +83,32 @@ export default {
         Vue.prototype.wToTop = function() {
             this.wSetScroll(0);
         };
+        // 返回顶部(匀速，兼容良好),1000必须被speed整除。
+        Vue.prototype.backToTop = function(e, speed = 100) {
+            console.log(1);
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop <= 0) {
+                return false;
+            }
+            let time = 1000 / speed;
+            let count = 0;
+            let distance = scrollTop / time;
+            let timer = setInterval(() => {
+                count++;
+                window.scrollBy(0, -1 * Math.ceil(distance));
+                count == time && clearInterval(timer);
+            }, time);
+        };
+        // 待修改
+        // 返回顶部(流畅，不兼容ie9)
+        // Vue.prototype.smoothScroll = function(that) {
+        //     console.log(2);
+        //     var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        //     if (currentScroll > 0) {
+        //         window.requestAnimationFrame(that.smoothScroll);
+        //         window.scrollTo(0, currentScroll - Math.ceil(currentScroll / 5));
+        //     }
+        // };
         // md5加密
         Vue.prototype.md5 = function(text) {
             return md5(text);

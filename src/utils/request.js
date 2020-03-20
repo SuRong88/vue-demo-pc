@@ -71,12 +71,12 @@ axios.interceptors.response.use(
 function get(url, params = {}) {
     return new Promise((resolve, reject) => {
         axios.get(url, {
-                params: params
-            })
-            .then(res => {
+            params: params
+        }).then(
+            res => {
                 resolve(res.data);
-            })
-            .catch(err => {
+            },
+            err => {
                 reject(err);
             });
     });
