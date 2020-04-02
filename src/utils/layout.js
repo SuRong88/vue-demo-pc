@@ -3,6 +3,7 @@ import md5 from 'md5'; // md5密码
 export default {
     install: function(Vue) {
         let loading = null;
+        
         // 错误提示
         Vue.prototype.errorToast = function(msg, duration = 3000) {
             if (msg) {
@@ -14,6 +15,7 @@ export default {
                 });
             }
         };
+        
         // 成功提示
         Vue.prototype.successToast = function(msg, duration = 3000) {
             if (msg) {
@@ -25,6 +27,7 @@ export default {
                 });
             }
         };
+        
         // 显示loading
         Vue.prototype.loading = function(type, text = '加载中...') {
             loading = this.$loading({
@@ -38,10 +41,12 @@ export default {
                 spinner: 'el-icon-loading'
             });
         };
+        
         // 隐藏loading
         Vue.prototype.loadEnd = function(type) {
             loading.close();
         };
+        
         // 弹窗
         // 注意：原弹窗按钮样式是左取消右确定，但项目UI需要左确定右取消，所以取消与确定的文本和事件对换
         Vue.prototype.wDialog = function(title, content, cancelButtonText, confirmButtonText, showConfirmButton,
@@ -69,6 +74,7 @@ export default {
                 })
                 .catch(function() {});
         };
+        
         // 指定滚动条位置
         Vue.prototype.wSetScroll = function(top) {
             if (document.documentElement.scrollTop || document.documentElement.scrollTop == 0) {
@@ -79,10 +85,12 @@ export default {
                 document.body.scrollTop = top;
             }
         };
+        
         // 返顶
         Vue.prototype.wToTop = function() {
             this.wSetScroll(0);
         };
+        
         // 返回顶部(匀速，兼容良好),1000必须被speed整除。
         Vue.prototype.backToTop = function(e, speed = 100) {
             console.log(1);
@@ -99,6 +107,7 @@ export default {
                 count == time && clearInterval(timer);
             }, time);
         };
+        
         // 待修改
         // 返回顶部(流畅，不兼容ie9)
         // Vue.prototype.smoothScroll = function(that) {
@@ -109,14 +118,17 @@ export default {
         //         window.scrollTo(0, currentScroll - Math.ceil(currentScroll / 5));
         //     }
         // };
+        
         // md5加密
         Vue.prototype.md5 = function(text) {
             return md5(text);
         };
+        
         // 日期格式化
         Vue.prototype.format = function(time, type) {
             return moment(time).format(type);
         };
+        
         // 手机验证码倒计时
         Vue.prototype.setTime = function(that, downtime = 60) {
             // 界面倒计时
@@ -133,6 +145,7 @@ export default {
                 }
             }, 1000);
         };
+        
         // Y轴隐藏滚动条 注意以下 
         // 1:不支持动态生成的标签以及懒加载标签(懒加载需要在对应的组件的mounted中执行this.hideScrollbarY(ref))
         // 2:隐藏滚动条Y,需要套三层标签结构(设置第一层标签ref以及宽高度即可)
@@ -148,6 +161,7 @@ export default {
             son.style.height = '100%';
             grandson.width = '100%';
         };
+        
         // ie9判断
         Vue.prototype.isIE9 = function() {
             if (
@@ -163,6 +177,7 @@ export default {
             }
             return false;
         };
+        
         // ie版本判断
         Vue.prototype.IEVersion = function() {
             var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
@@ -194,16 +209,4 @@ export default {
         };
     }
 };
-// export default (Vue) => {
-//     // 成功提示
-//     Vue.prototype.successToast = function(msg, duration = 3000) {
-//         if (msg) {
-//             this.$message({
-//                 message: msg,
-//                 type: 'success',
-//                 duration: duration,
-//                 showClose: true
-//             });
-//         }
-//     };
-// }
+

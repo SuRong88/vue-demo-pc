@@ -4,15 +4,9 @@ Vue.use(VueRouter);
 // test (files should be imported in main.js)
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+//test end
 
 const routes = [{
-        name: 'directive',
-        path: '/directive',
-        meta: {
-            title: 'vue指令'
-        },
-        component: resolve => require(['pages/Directive.vue'], resolve)
-    }, {
         name: 'test',
         path: '/test',
         meta: {

@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">footer{{ msg }}</div>
+    <div class="v-footer">footer{{ msg }}</div>
 </template>
 <script>
 export default {

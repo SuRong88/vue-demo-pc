@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="v-header">
         header
         <el-button @click.native="childHandle">{{ fdata }}</el-button>
         <el-button @click.native="btn(5)">send</el-button>

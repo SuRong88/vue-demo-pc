@@ -1,9 +1,9 @@
 <template>
-    <div class="search">search</div>
+    <div class="v-sidebar">sidebar</div>
 </template>
 <script>
 export default {
-    name: 'vSearch',
+    name: 'vSidebar',
     components: {},
     created() {},
     mounted() {},

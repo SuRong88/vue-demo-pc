@@ -11,7 +11,6 @@ import formCheck from 'utils/formCheck';
 import layout from 'utils/layout';
 import errorCode from 'utils/errorCode';
 import formatDate from 'utils/formatDate';
-import directive from 'utils/directive';
 
 import ElementUI from 'element-ui';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
@@ -21,7 +20,7 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(formCheck);
 Vue.use(layout);
 Vue.use(errorCode);
-Vue.use(directive);
+Vue.use(formatDate);
 
 import 'swiper/dist/css/swiper.css';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -29,8 +28,6 @@ import "css/normalize.css";
 import "css/base.less";
 import "css/layout.less";
 
-// 日期格式化 <td>{{ item.create_time | formatDate('yyyy-MM-dd') }}</td>
-Vue.filter('formatDate', formatDate);
 //vue原型链挂载总线
 Vue.prototype.$Bus = new Vue();
 
@@ -39,7 +36,3 @@ window.vm = new Vue({
     store,
     render: h => h(App)
 }).$mount("#app");
-
-// 测试 移动端弹窗
-import Toast from './Toast';
-Vue.use(Toast);

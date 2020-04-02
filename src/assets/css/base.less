@@ -466,55 +466,6 @@ input:disabled {
 }
 
 /*****************************
-错误提示样式
-*****************************/
-.name-error,
-.username-error,
-.phone-error,
-.phone_code-error,
-.email-error,
-.password-error,
-.password_null-error,
-.password_alike-error,
-.ID-error,
-.name-true,
-.ID-true,
-.phone-true,
-.phone_code-true,
-.email-true,
-.password-true,
-.password_null-true,
-.password_alike-true {
-    display: none;
-}
-
-.error span {
-    color: red;
-    display: none;
-    font-size: 12px;
-}
-
-/*****************************
-验证码按钮事件css类
-*****************************/
-.M_verification-code {
-    display: inline-block;
-    /* color: @green; */
-    line-height: 2.5rem;
-    text-align: center;
-    border-radius: 0.2rem;
-    padding: 0.2rem;
-    font-size: 1.4rem;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.M_verification-code.on {
-    background-color: #cccccc;
-    color: #a0a0a0;
-}
-
-/*****************************
 稀见样式
 *****************************/
 /*火狐浏览器的placeholder默认opacity0.4*/
@@ -563,6 +514,7 @@ input::-moz-placeholder {
         width: 0 !important;
     }
 }
+
 /*****************************
 本项目通用 elemenui样式覆盖
 *****************************/
@@ -768,6 +720,10 @@ input::-moz-placeholder {
     }
 }
 // 分页器end
+
+/*****************************
+nprogress样式覆盖
+*****************************/
 // nprogress start(注意#nprogress与#app为兄弟关系)
 body {
     #nprogress {
